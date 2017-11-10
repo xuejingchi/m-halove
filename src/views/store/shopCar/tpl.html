@@ -1,0 +1,56 @@
+<div class="shop-car">
+    <div class="head">
+    <!-- 为解决payment回退直接跳到odrerPayStatus导致的回退死循环 -->
+        <a v-link="{name:'storePage'}">
+            <img src="https://image03.halove.com/website/halove_mobile_20170118/images/backIcon.png" alt="">
+        </a>
+        购物车
+        <span class="shopcar-edit">
+            <span v-if="list.length!=0 && type==1" @click="edit()">编辑</span>
+            <span v-if="list.length!=0 && type==0" @click="save()">完成</span>
+        </span>
+    </div>
+    <div class="list-box">
+        <div class="shopcar-store" v-for="item in list">
+            <div class="shopcar-iconSel" @click="checkOne($index)">
+                <i class="icon {{item.check?'icon-check':''}}"></i>
+            </div>
+            <div class="shopcar-thumb">
+                <img :src="item.thumbPic" alt="">
+            </div>
+            <div class="shopcar-content">
+                <div class="title">{{item.goodsName}}</div>
+                <div class="des">{{item.specs}}</div>
+                <div class="bottom-box">
+                     <div class="price">￥{{item.price | pricetoFixed}}</div>
+                     <div class="amount">
+                      <span class="minus" @click="minus($index)">-</span>
+                      <input class="amountNo" type="tel" maxlength="2" v-model="item.amount" readonly="readonly">
+                      <span class="plus" @click="plus($index)">+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="bottom" v-if="list.length!=0">
+        <div class="check" @click="checkAll($event)">
+            <i class="icon {{all?'icon-check':''}}"></i>
+            全选
+        </div>
+        <div class="totalPrice" v-if="type">总计：<i>￥{{totalPrice | pricetoFixed}}</i></div>
+        <div class="do-box {{type?'pay':'delete'}}" @click="finishEdit()">
+            <span>{{typeText}}</span>
+            <span v-if="type">({{num}})</span>
+        </div>
+    </div>
+
+    <div class="isempty" v-if="list.length==0">
+        <img src="https://image03.halove.com/website/halove_mobile_20170118/images/kong.png"/>
+        <p class="des">您的购物车空空如也~</p>
+        <p class="see" v-link="{name:'storePage'}">继续逛逛</p>
+    </div>
+
+
+</div>

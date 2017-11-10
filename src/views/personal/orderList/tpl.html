@@ -1,0 +1,47 @@
+<div class="order-list-html">
+  
+  <head-nav title="全部订单"></head-nav>
+
+  <div v-for="item in listInfo" class="list">
+    <div class="num-box">
+      <span class="bianhao">订单编号：{{item.orderNo}}</span>
+      <span class="time">{{item.createTime | dateTimeFormatter 2}}</span>
+    </div>
+    <a class="link-box" v-link="{name:'orderDetail',params:{orderNo: item.orderNo}}">
+     
+      <div class="inner" v-for="goods in item.orderInfoObject.orderItems">
+        <div class="ineer-item">
+          <div class="block-img">
+            <img :src="goods.thumbPic" alt="" />
+          </div>
+          <div class="info">
+            <div class="title">{{goods.goodsName}} </div>
+            <div>{{goods.specs}}</div>
+            <div>单价：¥ {{goods.price | pricetoFixed}}<div style="float:right">x{{goods.amount}}</div></div>
+          </div>
+         <!--  <div class="pic">
+            <img src="https://image01.halove.com/website/halove_mobile_20170118/images/nextIcon.png" />
+          </div> -->
+        </div>
+      </div>
+
+
+    </a>
+    <div class="pay-status">
+      <span class="num">共<label>{{item.goodsAmount}}</label>件商品</span>
+      <span class="price">实付：￥{{item.feeTotal | pricetoFixed }}</span>
+      <span v-if="item.status==0" class="status">
+        <a v-link="{name: 'payment',params:{orderNo:item.orderNo}}">去付款</a>
+      </span>
+      <span class="status"> <p>{{item.status | mapper 'payStatus'}}</p></span>
+    </div>
+  </div>
+
+  <div class="isempty" v-if="isempty">
+      <img src="https://image03.halove.com/website/halove_mobile_20170118/images/icon_NoOrder.png"/>
+      <p class="des">暂无订单</p>
+      <p class="see" v-link="{name:'storePage'}">去逛逛</p>
+  </div>
+
+
+</div>

@@ -1,0 +1,24 @@
+<div class="col-xs-12 login-html">
+  <div class="col-xs-12" style="margin-top:3rem;">
+    <img src="https://image03.halove.com/website/halove_mobile_20170118/images/headerIcon.png" class="headIcon" />
+  </div>
+  <div class="col-xs-12 title">
+    登录九爱
+  </div>
+  <div class="col-xs-12 form-group">
+
+    <span class="input-span">
+      <input id="phoneno" maxlength="11" type="number" placeholder="请输入您的手机号" class="input phone" v-model="loginParams.phone"/>
+    </span>
+    <span class="input-span code">
+    <input id="codeno" maxlength="11" type="number" placeholder="验证码" class="input" v-model="loginParams.code"/>
+       <div id="sendSuccess" @click="sendCode()" class="send">发送验证码</div>
+        
+    <div id="showTime" class="showTime">60&nbsp;秒</div>
+    </span>
+  
+  </div>
+  <div class="col-xs-12 btn-cover">
+    <input @click="login()" type="button" value="登录" />
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="sell-html">
+    <div class="slide-nav1">
+        <div class="navTab1" v-for="items in sellList.list">
+            <div class="name js-name1" @click="sellClick($event,items.id,$index)">{{items.name}}零售网点<i class="iconfont">&#xe615;</i></div>
+                <div class="link-box1" style="border-bottom:1px solid #dcdcdc;"  v-for="stores in items.namePinyin.list">
+                    <div class="title">{{stores.name}}</div>
+                    <div class="title">地址：{{stores.address}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<div class="create-order-html">
+	<div class="body-html">
+	   <div class="head">
+        <a href="javascript:void(0);" @click="back()">
+            <img src="https://image03.halove.com/website/halove_mobile_20170118/images/backIcon.png" alt="">
+        </a>
+       <span>填写订单</span>
+       <a v-link="{name:'address'}" class="add-address" v-if="addressInfo.length==0">添加地址</a>
+    </div>
+	
+	  <a v-if="addressInfo.length!=0" v-link="{name:'address'}">
+	    <div class="info-cover">
+	      <div>收货人：{{addressInfo.ruserName}} {{addressInfo.phone}}</div>
+	      <div class="address-box">收货地址：{{addressInfo.province+addressInfo.city+addressInfo.district+addressInfo.address}}</div>
+	      <img class="nextIcon" src="https://image03.halove.com/website/halove_mobile/images/nextIcon.png" alt="" />
+	    </div>
+	  </a>
+
+
+	  <div class="phone-cover" v-for="item in itemInfo">
+	    <div class="col-xs-3" style="margin-top:1rem;">
+	      <img id="getPic" class="get-pic" :src="item.thumbPic"/>
+	    </div>
+	    <div class="col-xs-9" style="padding:0.5rem 0.8rem;">
+	      <div class="phone-name">
+	       {{item.goodsName}}
+	      </div>
+	      <div class="phone-size">
+	        <span id="colorPick">{{item.specs}}</span>
+	      </div>
+	      <div class="price-cover">
+	        <div>
+	          ￥<span class="totalPrice">{{item.price | pricetoFixed}}</span>
+	          <span class="amount-cover">X&nbsp;<span id="amount">{{item.amount}}</span></span>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+
+
+
+	  <div class="line-peisong">
+	    配送方式：<span>快递运输（运费￥{{expFee | pricetoFixed}}）</span>
+	  </div>
+
+
+	  <a v-link="{name:'addInvoice'}">
+	    <div class="add-invoice">
+	      开具发票：
+	      <span v-if="invoiceParams.mediaType==0">
+            不开具发票&nbsp;&nbsp;
+            <img src="https://image03.halove.com/website/halove_mobile_20170118/images/nextIcon.png"/>
+        </span>
+	      <span v-if="invoiceParams.mediaType==1">
+            纸质发票&nbsp;&nbsp;
+            <img src="https://image03.halove.com/website/halove_mobile_20170118/images/nextIcon.png"/>
+        </span>
+	      <span v-if="invoiceParams.mediaType==2">
+            电子发票&nbsp;&nbsp;
+            <img src="https://image03.halove.com/website/halove_mobile_20170118/images/nextIcon.png"/>
+        </span>
+	    </div>
+	  </a>
+
+
+	  <div class="line-money">
+	    商品金额：<span class="inner">￥<span class="totalPrice">{{totalPrice | pricetoFixed}}</span></span>
+	  </div>
+	  <div class="line-yunfei">
+	    运费：<span class="inner">￥<span style="font-size:0.7rem;">{{expFee | pricetoFixed}}</span></span>
+	  </div>
+
+  </div><!--body-html-end-->
+
+
+	<div class="fluid">
+	  <div class="price">总价：￥<span class="totalPrice">{{expTotalPrice | pricetoFixed}}</span></div>
+	  <div  class="buy-cover">
+	  	<p class="" @click="buyNow()">立即购买</p>
+	    <!-- <img src="https://image01.halove.com/website/halove_mobile_20170118/images/buyNow.jpg" alt=""> -->
+	  </div>
+	</div>
+
+</div>

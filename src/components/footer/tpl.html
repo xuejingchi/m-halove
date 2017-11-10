@@ -1,0 +1,51 @@
+<footer class="footer-html" v-show="isshowfooter" >
+    <div class="attention">关注我们</div>
+
+    <div class="inner-box">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+            <div class="col-xs-4"><a href="http://weibo.com/u/5890919173?retcode=6102"><img src="https://image03.halove.com/website/halove_mobile_20170118/images/weibo 2.png" alt=""></a></div>
+            <div class="col-xs-4"><img src="https://image03.halove.com/website/halove_mobile_20170118/images/weixin.png" alt="" @click="showWechat()"></div>
+            <div class="col-xs-4"><img src="https://image03.halove.com/website/halove_mobile_20170118/images/tieba.png" alt=""></div>
+        </div>
+        <div class="col-xs-12 phone" >客服电话：400-618-9292</div>
+        <div class="col-xs-12 time time1" >周一至周日  9:00～21:00</div>
+        <div class="slide-nav">
+            <div class="navTab">
+                <div class="name js-name">服务支持<i class="iconfont">&#xe615;</i></div>
+                <div class="link-box">
+
+                     <!--<a>售后支持</a>-->
+                     <a href="http://mall.jd.com/index-626739.html">京东旗舰店</a>
+                     <a href="http://mall.gome.com.cn/80012346/">国美旗舰店</a>
+                     <a href="http://halove.suning.com/">苏宁旗舰店</a>
+                     <a href="http://shop.yhd.com/m-228602.html?1480302690000=8004">一号店</a>
+                </div>
+            </div>
+            <div class="navTab">
+                <div class="name js-name">关于九爱<i class="iconfont">&#xe615;</i></div>
+                <div class="link-box">
+                    <a v-link="{name:'aboutUs'}">了解我们</a>
+                    <a v-link="{name:'footStep'}">九爱足迹</a>
+                    <a v-link="{name:'partner'}">九爱伙伴</a>
+                    <a v-link="{name:'contactUs'}">联系我们</a>
+                </div>
+            </div>
+        </div>
+        <div class="beian">
+            <p>杭州九爱科技有限公司</p>
+            <div>© Copyright 2016－2017 Halove( hangzhou ) Technology Co., LTD浙公网安备 33010802007271号</div>
+            <p>服务声明 | 隐私条款</p>
+        </div>
+    </div>
+
+    <div id="top" class="to-top" @click="toTop()"><img src="https://image03.halove.com/website/halove_mobile_20170118/images/scrollTop.png" alt=""/></div>
+
+    <div id="hideEwm" class="hideEwm" :class="{'showEwm':isShow}" @click="hideWechat()">
+       <div class="icon"></div>
+       <div class="img-cover">
+         <img src="https://image03.halove.com/website/halove_mobile_20170118/images/weixinLink.png" alt=""/>
+       </div>
+    </div>
+
+</footer>

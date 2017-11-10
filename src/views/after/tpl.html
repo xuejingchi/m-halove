@@ -1,0 +1,28 @@
+<div class="after-page-html">
+    <div class="wrap" id="wrap">
+        <ul class="tabClick">
+            <li class="active">
+                维修门店
+            </li>
+            <li>
+                零售门店
+            </li>
+            <li>
+                常见问题
+            </li>
+        </ul>
+        <div class="tabCon">
+            <div class="tabBox">
+                <div class="tabList">
+                    <repair :info="info" :select-name="selectName"></repair>
+                </div>
+                <div class="tabList tab2">
+                    <sell :sell-info="sellInfo"></sell>
+                </div>
+                <div class="tabList tab3">
+                    <faq :faq-info="faqInfo"></faq>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

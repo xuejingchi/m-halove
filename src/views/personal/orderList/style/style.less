@@ -1,0 +1,168 @@
+body{
+  background: #f7f7f7;
+}
+.order-list-html {
+  background: #f7f7f7;
+  padding-bottom: 1rem;
+  min-height: 100%;
+  .list {
+    background: white;
+    border-top: 1px solid #eaeaea;
+    margin-top: 0.3rem;
+    .num-box {
+      height: 1.6rem;
+      line-height: 1.6rem;
+      font-size: .6rem;
+      color: #9b9b9b;
+      border-bottom: 1px solid #eaeaea;
+      overflow: hidden;
+      width: 100%;
+      .bianhao {
+        text-align: left;
+        padding-left: 0.6rem;
+        font-size: 0.6rem;
+        float: left;
+      }
+      .time {
+        float: right;
+        padding-right: 0.6rem;
+        font-size: 0.6rem;
+
+
+      }
+    }
+    .link-box {
+      display: block;
+      background: url(https://image01.halove.com/website/halove_mobile_20170118/images/nextIcon.png) no-repeat 16.8rem center;
+      background-size: 0.4rem 0.7rem;
+      .inner:last-of-type{
+        .ineer-item .info{
+           border-bottom: 0;
+        }
+      }
+      .inner {
+        height: 4.89rem;
+        position: relative;
+        overflow: hidden;
+        
+        .ineer-item{
+          display: flex;
+          flex-wrap: nowrap;
+          padding-left:1rem;
+          padding-top: .93rem;
+          padding-right: 0.8rem;
+          .block-img{
+            width:3rem;height:3rem;padding:0;
+            float: left;
+          }
+          .block-img img{
+            width:2.47rem;
+            height:2.75rem;
+            margin:0.15rem 0.28rem;
+          }
+          .item-text{
+            font-size: .67rem;
+            line-height: .67rem;
+            color: #4a4a4a;
+            width: 10rem;
+            padding-bottom: .25rem;
+            overflow: hidden;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            .name{
+              padding-bottom: .25rem;
+            }
+          }
+          .info{
+            float: left;
+            margin-left:0.67rem;
+            width: 11.5rem;
+            background: #fff;
+            border: none;
+            font-size: 0.67rem;
+            line-height: 1rem;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 0.83rem;
+            div{
+              color:#9b9b9b;
+            }
+            .title{
+              color: #4a4a4a;
+            }
+          }
+        }
+        .phone-info {
+          line-height: 1rem;
+          margin-top: 1.2rem;
+          .name {
+            font-size: 0.7rem;
+            color: black;
+          }
+          .price {
+            font-size: 0.7rem;
+            color: black;
+            padding-top: 0.2rem;
+          }
+          .num {
+            font-size: 0.7rem;
+            color: black;
+            margin-top: -0.4rem;
+          }
+        }
+        .pic {
+          position: absolute;
+          z-index: 2;
+          right: 0.8rem;
+          top: 1.8rem;
+          img {
+            width: 0.4rem;
+            margin-top: 0.5rem;
+          }
+        }
+      }
+    }
+    .pay-status {
+      height: 2rem;
+      line-height: 2rem;
+      border-bottom: 1px solid #eaeaea;
+      border-top: 1px solid #eaeaea;
+      color: #9b9b9b;
+      font-size: .67rem;
+      // display: flex;
+      // justify-content: space-between;
+      // flex-wrap: nowrap;
+      .num{
+        padding-left: 1rem;
+        label{
+          color: #4a4a4a;
+          padding-left: .2rem;
+          padding-right: .2rem;
+        }
+      }
+      .price {
+        text-align: left;
+        padding-left: 0.5rem;
+        font-size: 0.7rem;
+      }
+      .status {
+        float: right;
+        font-size: 0.7rem;
+        p{
+          padding-right: 1rem;
+        }
+        a {
+          height: 1.96rem;
+          background: #febf2b;
+          line-height: 2rem;
+          // width: 6rem;
+          padding: 0px 10px;
+          text-align: center;
+          display: block;
+          text-decoration: none;          
+          color: white;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+}

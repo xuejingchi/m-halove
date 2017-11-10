@@ -1,0 +1,3 @@
+<div>
+    <input v-for="vol in val.itemSpecs" type="button" class="specBtn" :class="{'active': specList[index1].itemSpecs[$index].actived === 1}" @click="changeSpec($index,val)" :value="vol.spec"/>
+</div>

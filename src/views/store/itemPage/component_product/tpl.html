@@ -1,0 +1,23 @@
+<div class="procuct-html" v-if="info">
+  <!-- 产品展示 -->
+  <div class="product-show">
+    <div id="picBg" class="picBg" :style="{ backgroundImage:'url('+info.pic+')'}">
+      <!-- <img id="picWidth" :src="info.pic" alt="" /> -->
+    </div>
+    <div class="info-box">
+      <div class="name">{{info.name}}<span class="price">￥{{info.price | pricetoFixed}}</span></div>
+      <div class="detail" v-if="info.priceDesc">{{info.priceDesc}}</div>
+      <div class="detail">
+        <span class="attention">满99包邮/ 7天无理由退货/ 30天免费换货</span>
+      </div>
+    </div>
+    <div id="selectType" @click="chooseSpec()" class="select-type">
+      选择:
+      <img src="https://image02.halove.com/website/halove_mobile_20170118/images/nextIcon.png" alt="" class="icon-right" />
+      <span id="specDef" class="spec-def">{{selectName?selectName:placeHolderProps}}</span>
+      <span id="specSure" class="spec-sure"></span>
+    </div>
+    <div v-el:gdetail>
+    </div>
+  </div>
+</div>

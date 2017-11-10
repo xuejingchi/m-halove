@@ -1,0 +1,18 @@
+<!-- <table v-if="propInfo">
+  <tr v-for="item in propInfo[0].props">
+    <td class="left">{{item.k}}</td>
+    <td class="right">{{item.v}}</td>
+  </tr>
+  <tr v-for="item in propInfo[1].props">
+    <td class="left">{{item.k}}</td>
+    <td class="right">{{item.v}}</td>
+  </tr>
+</table> -->
+<div class="params" v-if="propInfo">
+  <div v-for="props in propInfo" class="param_item">
+    <div class="item_line" v-for="item in props.props">
+      <span class="left">{{item.k}}</span>
+      <span class="right">{{item.v}}</span>
+    </div>
+  </div>
+</div>

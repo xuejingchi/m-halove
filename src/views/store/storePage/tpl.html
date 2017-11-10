@@ -1,0 +1,6 @@
+<div class="storepage-html" >
+    <div class="block" v-for="l in list" v-link="{name:'itemPage',params: {itemCode: l.code}}">
+      <!-- <div class="storepage-btn1" ></div> -->
+      <img :src="l.thumbPic" alt=""/>
+    </div>
+</div>

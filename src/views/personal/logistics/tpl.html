@@ -1,0 +1,66 @@
+<div class="logistics-detail-html">
+    <div class="head-cover">
+        <head-nav title="物流详情"></head-nav>
+    </div>
+    <div class="empty" v-if="logistics.length==0">
+        <div class="list-box"></div>
+        <div class="isEmpty">
+            <img src="https://image03.halove.com/website/halove_mobile_20170118/images/noInfo.png" alt=""/>
+            <p class="des">暂未查询到物流进度</p>
+        </div>
+    </div>
+    <div class="list" v-else>
+        <div class="now">
+            <div class="type">物流状态：
+                <span v-if="info.status == 00">等待揽件</span>
+                <span v-if="info.status == 50">已揽件</span>
+                <span v-if="info.status == 30">运送中</span>
+                <span v-if="info.status == 44">派送中</span>
+                <span v-if="info.status == 80">已收件</span>
+            </div>
+            <div class="company">物流公司：
+                <span>{{info.company}}</span>
+            </div>
+            <div class="no">
+                运单编号：<span>{{info.no}}</span>
+            </div>
+        </div>
+        <!-- 单个物流信息(已揽件),status为50的时候只有一个状态-->
+        <div class="get" v-if="info.status == 50">
+            <div class="ico">
+                <div class="point"><div class="inner"></div></div>
+                <div class="line"></div>
+            </div>
+            <div class="detail">
+                <div class="title">卖家已发货</div>
+                <div class="time">{{logistics.routes[0].acceptTime}}</div>
+            </div>
+        </div>
+        <!-- 更多物流信息-->
+        <div v-else>
+            <div class="more" v-for="(index,f) in newLogistics">
+                <div v-if="$index==0">
+                    <div class="ico1">
+                        <div class="point"><div class="inner"></div></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="detail">
+                        <div class="des">{{f.remark}}</div>
+                        <div class="time">{{f.acceptTime}}</div>
+                    </div>
+                </div>
+                <div v-else>
+                    <div class="ico">
+                        <div class="point"><div class="inner"></div></div>
+                        <div v-if="index==newLogistics.length-1" class="line" style="height:2.3rem;"></div>
+                        <div v-else class="line"></div>
+                    </div>
+                    <div class="detail">
+                        <div class="des">{{f.remark}}</div>
+                        <div class="time">{{f.acceptTime}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

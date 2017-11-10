@@ -1,0 +1,87 @@
+.after-page-html{
+  .wrap {
+    text-align: center;
+  }
+  .tabClick {
+    background: white;
+    overflow: hidden;
+    margin-bottom: 0;
+    height: 2.3rem;
+  }
+  .tabClick li {
+    height: 2.3rem;
+    line-height: 2.3rem;
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    font-size: .8rem;
+    border-bottom:1px solid #dcdcdc;
+    img {
+      width: 0.67rem;
+      height: 0.67rem;
+    }
+  }
+  .tabClick li.active {
+    height: 2.3rem;
+    color: #4a4a4a;
+    border-bottom:3px solid #ffda01;
+    background: white;
+    transition: 0.2s;
+    font-weight: normal;
+  }
+  .tabBox {
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    position: relative;
+    // width: 36rem;
+  }
+  .tabList {
+    height: 100%;
+    overflow: scroll;
+    // width: 18rem;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    vertical-align: top;
+    display: table-cell;
+  }
+  .tab2 {
+    // background:#f6f6f6;
+  }
+  .slide-nav {
+    text-align: left;
+    clear: both;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    .navTab {
+      padding: 0px 1.13rem;
+      border-bottom: 1px solid #eaeaea;
+      .name {
+        height: 2.8rem;
+        font-size: 0.8rem;
+        color: #4a4a4a;
+        line-height: 2.8rem;
+        display: block;
+        i{
+          color:#a5a5a5;
+          font-size: 0.5rem;
+          float: right;
+          display: block;
+        }
+      }
+    }
+    .link-box{
+      margin-bottom: 1rem;
+      font-size:0.8rem;
+      display: none;
+      a{
+        display: block;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 0.67rem;
+        padding-left: 0.5rem;
+        color:#aeaeae;
+      }
+    }
+  }
+}

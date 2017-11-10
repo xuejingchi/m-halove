@@ -1,0 +1,72 @@
+<div class="order-status-html" v-if="info">
+    <div class="head-cover">
+       <!-- <head-nav title="订单详情"></head-nav> -->
+       <div class="head">
+        <a v-link="{name:'shopCar'}">
+            <img src="https://image03.halove.com/website/halove_mobile_20170118/images/backIcon.png" alt="">
+        </a>
+        订单详情
+       
+    </div>
+
+    </div>
+    <div class="order-info">
+        <label>订单信息</label>
+        <div>订单号：<span>{{info.orderNo}}</span></div>
+        <div>下单时间：<span>{{info.createTime | dateTimeFormatter 2}}</span></div>
+        <div>订单状态：<span>{{info.status | mapper 'orderStatus'}}</span></div>
+        <!-- <div>快递公司：<span>{{info.status | mapper 'orderStatus'}}</span></div> -->
+    </div>
+
+    <div class="shangping-info">
+        <div class="head-title">商品信息</div>
+        <div class="inner" v-for="goods in info.orderInfoObject.orderItems">
+            <div class="thumbPic">
+                <img :src="goods.thumbPic" alt=""/>
+            </div>
+            <div class="info">
+                <div class="title">{{goods.goodsName}} </div>
+                <div>{{goods.specs}}</div>
+                <div>单价：¥ {{goods.price | pricetoFixed}}<div style="float:right">X{{goods.amount}}</div></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="yunfei-info">
+        <div class="line">商品总计<span> ¥ {{info.feeGoods | pricetoFixed}}</span></div>
+        <div class="line">运费<span> ¥ {{info.feeExp | pricetoFixed}}</span></div>
+        <div class="line">应付金额<span class="red">¥ {{info.feeTotal | pricetoFixed}}</span></div>
+    </div>
+
+    <div class="shouhuo-info">
+        <label>收货信息</label>
+        <div>{{info.orderInfoObject.address.contact}}   {{info.orderInfoObject.address.phone}}</div>
+        <div>{{info.orderInfoObject.address.province+info.orderInfoObject.address.city+info.orderInfoObject.address.district+info.orderInfoObject.address.address}}</div>
+    </div>
+
+    <div class="fapiao-info">
+       <label>发票信息</label>
+        <div>发票类型：
+        <span v-if="info.orderInfoObject.invoiceInfo.mediaType == 2">电子发票</span>
+        <span v-if="info.orderInfoObject.invoiceInfo.mediaType == 1">纸质发票</span>
+        </div>
+        <div>发票抬头：
+        <span v-if="info.orderInfoObject.invoiceInfo.type == 1">{{info.orderInfoObject.invoiceInfo.name}}</span>
+         <span v-if="info.orderInfoObject.invoiceInfo.type == 2">{{info.orderInfoObject.invoiceInfo.title}}</span>
+        </div>
+        <div>发票内容：<span>{{info.orderInfoObject.invoiceInfo.content}}</span></div>
+    </div>
+    <div class="fapiao-tip">
+        电子发票是税务局认可的有效收付款的凭证，既可用于售后服务，打印后也可用于企业报销。
+    </div>
+    <div v-if="info.status==0">
+        <div style="height:2.1rem;"></div>
+         <div class="pay-info">
+            <a @click="cancelOrder()" class="col-xs-6 cancel">取消订单</a>
+            <a v-link="{name: 'payment',params:{orderNo:info.orderNo}}" class="col-xs-6 sure">去付款</a>
+        </div>
+    </div>
+
+
+</div>

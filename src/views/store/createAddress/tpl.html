@@ -1,0 +1,25 @@
+<div class="create-address-html">
+  <head-nav :title="pageTitle"></head-nav>
+  <div class="fill-info">
+    <input v-model="addressInfo.userName" type="text" maxlength="7" placeholder="收货人姓名" />
+  </div>
+  <div class="fill-info">
+    <input v-model="addressInfo.phone" type="number" maxlength="11" placeholder="收货人手机号" />
+  </div>
+  <div class="fill-info">
+    送至:
+    <span class="content-block">
+       <input v-model="addressInfo.address" style="" id="demo2" type="text" readonly="">
+       <input  id="value2" type="hidden">
+     </span>
+  </div>
+  <div class="fill-info" style="height: 6rem;">
+    <textarea v-model="addressInfo.addressDetail" placeholder="详细地址"></textarea>
+  </div>
+  <div class="moren" @click="setDefault()"><i class="iconfont {{addressInfo.status == 1? 'active':''}} ">&#xe694;</i>设置为默认地址</div>
+
+
+  <div @click="sureBtn()" class="col-xs-12 sure">保&nbsp;存</div>
+
+</div>
+

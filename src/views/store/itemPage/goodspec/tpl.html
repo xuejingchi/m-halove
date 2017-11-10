@@ -1,0 +1,6 @@
+<div class="col-xs-12 block2 border1">
+    <div class="col-xs-4 block-title" >{{goodSpec.type}}</div>
+    <div class="col-xs-8 block-btn">
+        <input v-for="vol in goodSpec.itemSpecs" type="button" class="specBtn" :class="{'active': currentIndex===$index}" @click="changeSpec($index)" :value="vol.spec"/>
+    </div>
+</div>

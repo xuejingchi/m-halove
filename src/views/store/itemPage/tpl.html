@@ -1,0 +1,62 @@
+<div class="store-page-html">
+  <div class="wrap" id="wrap">
+    <ul class="tabClick">
+      <li class="active">
+        <img src="https://image02.halove.com/website/halove_mobile_20170118/images/headerIcon1.png" />
+        <br/> 商品
+      </li>
+      <li>
+        <img src="https://image02.halove.com/website/halove_mobile_20170118/images/headerIcon3.png" />
+        <br/> 参数
+      </li>
+    </ul>
+    <div class="tabCon">
+      <div class="tabBox">
+        <div class="tabList">
+          <procuct :info="info" :select-name="selectName"></procuct>
+        </div>
+        <div class="tabList tab2">
+          <params :prop-info="propInfo"></params>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 顶部购买按钮 -->
+  <div class="col-xs-12 buy-box" >
+    <div class="price-box">总价：￥<span class="totalPrice" id="totalPrice">{{info.price | pricetoFixed}}</span></div>
+    <div class="buy">
+      <a @click="saveItem(true)">加入购物车</a>
+    </div>
+  </div>
+
+  <!-- 蒙层 -->
+  <div id="showOpa" class="show-cover" v-show="isSelect"> </div>
+  <!-- 选择弹出框 -->
+  <div id="showSpec" class="show-spec animated fadeInUp" v-show="isSelect">
+    <div class="col-xs-12 block1">
+      <i class="iconfont closeIcon" @click="close()">&#xe633;</i>
+      <div class="show-color-box" :style="{ backgroundImage:'url('+phoneColor+')'}">
+      </div>
+      <div class="price-box">
+        <div class="price">¥<span class="totalPrice">{{info.price | pricetoFixed}}</span></div>
+        <div class="name">{{info.name}}</div>
+      </div>
+    </div>
+    <div v-for="val in specList">
+      <goodspec :good-spec="val" ></goodspec>
+    </div>
+    <div class="col-xs-12 block2 border1">
+      <div class="col-xs-4 block-title" >选择数量</div>
+      <div class="col-xs-8 block-btn">
+        <img src="https://image02.halove.com/website/halove_mobile_20170118/images/minusIcon.png" class="minusBtn" alt="" @click="minus()"/>
+        <img src="https://image02.halove.com/website/halove_mobile_20170118/images/minusIcon.png" class="num-box" alt=""/>
+        <input  type="number"  class="amount"  v-model="param.amount"/>
+        <img src="https://image02.halove.com/website/halove_mobile_20170118/images/plusIcon.png" class="plusBtn" alt="" @click="plus()"/>
+      </div>
+    </div>
+
+    <div class="col-xs-12 sure" @click="saveItem()">确定</div>
+  </div>
+
+</div>

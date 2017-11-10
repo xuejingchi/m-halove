@@ -1,0 +1,463 @@
+body {
+  background: #f7f7f7;
+  position: relative;
+}
+
+.store-page-html {
+  .wrap {
+    text-align: center;
+  }
+  .tabClick {
+    background: #f3f3f3;
+    overflow: hidden;
+    margin-bottom: 0;
+    height: 2.3rem;
+  }
+  .tabClick li {
+    height: 2.3rem;
+    line-height: 1.2rem;
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-size: .5rem;
+    img {
+      width: 0.67rem;
+      height: 0.67rem;
+    }
+  }
+  .tabClick li.active {
+    height: 2.3rem;
+    color: #4a4a4a;
+    background: #ffda01;
+    transition: 0.2s;
+    font-weight: 100
+  }
+  .tabBox {
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    position: relative;
+    // width: 36rem;
+  }
+  .tabList {
+    height: 100%;
+    overflow: scroll;
+    // width: 18rem;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    vertical-align: top;
+    display: table-cell;
+  }
+  .tab2 {
+    // background:#f6f6f6;
+  }
+  .buy-box {
+    position: fixed;
+    z-index: 2;
+    height: 3rem;
+    line-height: 3rem;
+    bottom: 0px;
+    width: 100%;
+    background: white;
+    box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.05), inset 0px 1px 0px 0px #dcdcdc;
+    overflow: hidden;
+    .price-box {
+      font-size: 0.9rem;
+      padding-left: 0;
+      font-weight: 500;
+      float: left;
+    }
+    .totalPrice {
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .buy {
+      float: right;
+    }
+    .buy a {
+      margin-top: 0.4rem;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      color: white;
+      width: 6.6rem;
+      height: 2.2rem;
+      line-height: 2.2rem;
+      background-image: linear-gradient(-180deg, #ffc100 0%, #ffbb00 100%);
+      border-radius: 0.2rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.params{
+  width: 100%;
+  padding-bottom: 3rem;
+  background-color: #fff;
+  .param_item{
+    width: 100%;
+    font-size: .67rem;
+    color: #4a4a4a;
+
+    .item_line{
+      overflow: hidden;
+      border-bottom: 1px solid #eaeaea;
+    }
+    span{
+      display: inline-block;
+      &.left {
+        width: 40%;
+        padding: .8rem 1rem;
+        padding-right: 0;
+        text-align: left;
+      }
+      &.right {
+        width: 45%;
+        padding: .8rem 1rem;
+        padding-left: 0;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.product-show {
+  .picBg {
+    background-color: white;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 10rem;
+    text-align: center;
+    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+    img {
+      // width: auto;
+      // // width: 6rem;
+      // // margin-top: 2rem;
+      // max-width: 100%;
+      // max-height: 100%;
+      // display: block;
+      // margin:0 auto;
+    }
+  }
+  .info-box {
+    font-size: 0.67rem;
+    border-bottom: 1px solid #eaeaea;
+    padding: 0.79rem 1.05rem;
+    text-align: left;
+    color: #4a4a4a;
+    .name {
+      font-weight: bold;
+      font-size: 0.87rem;
+      font-family: SourceHanSansCN-Medium;
+    }
+    .price {
+      color: #e23c3c;
+      font-size: 0.67rem;
+      font-family: "avenirNext-Medium" !important;
+    }
+    .detail {
+      padding-top: 0.3rem;
+    }
+    .icon-jia {
+      color: #e23c3c;
+    }
+    .attention {
+      color: #9b9b9b;
+      font-size: 0.5rem;
+    }
+  }
+  .select-type {
+    background: #f7f7f7;
+    border-bottom: 1px solid #eaeaea;
+    text-align: left;
+    font-size: 0.6rem;
+    line-height: 2.33rem;
+    height: 2.33rem;
+    color: #4a4a4a;
+    padding-left: 0.8rem;
+    .icon-right {
+      position: relative;
+      z-index: 2;
+      width: 0.4rem;
+      float: right;
+      top: 0.8rem;
+      right: 0.8rem;
+    }
+    .spec-def {
+      padding-left: 0.73rem;
+      color: #9b9b9b;
+      font-size: 0.6rem;
+    }
+    .spec-sure {
+      display: none;
+      font-family: SourceHanSansCN-Medium;
+      padding-left: 0.73rem;
+      color: #4a4a4a;
+      font-size: 0.6rem;
+    }
+  }
+}
+
+.show-cover {
+  position: fixed;
+  z-index: 998;
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.8;
+}
+
+.show-spec {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  background: white;
+  text-align: center;
+  -webkit-animation-duration: 0.4s;
+  .block-title {
+    padding: 0;
+    text-align: left;
+    font-size: 0.7rem;
+  }
+  .block1 {
+    position: relative;
+    height: 4.41rem;
+    background: white;
+    text-align: left;
+    font-size: 1rem;
+    padding: 1rem;
+    .show-color-box {
+
+      background-color: #fff;
+      border: 1px solid #eaeaea;
+      height: 4.67rem;
+      width: 4.67rem;
+      // position: absolute;
+      // bottom: 0.75rem;
+      margin-top: -1.7rem;
+      float: left;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05);
+      background-size: contain;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      img {
+        width: 3.5rem;
+        max-height: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .closeIcon {
+      float: right;
+      color: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      z-index: 3;
+      right: 1rem;
+    }
+    .price-box {
+      padding-left: 0.75rem;
+      float: left;
+      .price {
+        color: #e23c3c;
+        font-weight: 500;
+        font-size: .5rem;
+        .totalPrice {
+          font-weight: 500;
+          font-size: .8rem;
+        }
+      }
+    }
+    .name {
+      font-weight: 500;
+      color: #4a4a4a;
+      font-size: .87rem;
+    }
+  }
+  .block2 {
+    position: relative;
+    background: white;
+    text-align: left;
+    font-size: .8rem;
+    padding: 1rem;
+    padding-bottom: .7rem;
+    .block-title {
+      width: 3rem;
+      font-size: 0.6rem;
+      color: #4a4a4a;
+      text-align: left;
+    }
+    .specBtn {
+      color: #4a4a4a;
+      cursor: pointer;
+      background: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.6rem;
+      font-family:'Microsoft YaHei';
+      width: 5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      margin-bottom: .3rem;
+      margin-right: 0.67rem;
+      border: 1px solid #eaeaea;
+      &.active {
+        background: #fed900;
+        border: 1px solid #fed900;
+        color: white;
+      }
+    }
+    .block-btn {
+      width: 12rem;
+      padding: 0;
+    }
+    .minusBtn {
+      position: relative;
+      z-index: 3;
+      width: 1.5rem;
+      margin-top: -0.05rem;
+    }
+    .num-box {
+      position: relative;
+      width: 2.5rem;
+      height: 1.5rem;
+      margin-left: -0.5rem;
+      margin-top: -0.05rem;
+    }
+    .amount {
+      position: absolute;
+      width: 2rem;
+      height: 1.4rem;
+      line-height: 1.4rem;
+      text-align: center;
+      margin-left: -2.4rem;
+      border: 0;
+      color: #4a4a4a;
+    }
+    .plusBtn {
+      width: 1.5rem;
+      margin-top: -0.05rem;
+      margin-left: -0.31rem;
+    }
+  }
+  .block3 {
+    position: absolute;
+    bottom: 8.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    background: white;
+    border-bottom: 1px solid #eaeaea;
+    text-align: left;
+    font-size: 0.8rem;
+    padding-left: 0.8rem;
+    .specBtn {
+      color: #4a4a4a;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      border: 1px solid #eaeaea;
+      background: white;
+    }
+    .active {
+      color: white;
+      border: 1px solid #fed900;
+      background: #fed900;
+    }
+  }
+  .block4 {
+    position: absolute;
+    bottom: 5.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    background: white;
+    border-bottom: 1px solid #eaeaea;
+    text-align: left;
+    font-size: 0.8rem;
+    padding-left: 0.8rem;
+    .specBtn {
+      color: #d3d3d3;
+      cursor: pointer;
+      border: 1px solid #eaeaea;
+      background: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.7rem;
+    }
+    .active {
+      color: white;
+      background: #fed900;
+      border: 1px solid #fed900;
+    }
+  }
+  .block5 {
+    position: absolute;
+    bottom: 2.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    background: white;
+    text-align: left;
+    font-size: 0.8rem;
+    padding-left: 0.8rem;
+    .minusBtn {
+      position: relative;
+      z-index: 3;
+      width: 2rem;
+      margin-top: -0.05rem;
+    }
+    .num-box {
+      width: 4rem;
+      height: 2rem;
+      margin-left: -0.5rem;
+      margin-top: -0.05rem;
+    }
+    .amount {
+      position: absolute;
+      width: 3.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      text-align: center;
+      margin-left: -4rem;
+      border: 0;
+      margin-top: 0.7rem;
+      color: #4a4a4a;
+    }
+    .plusBtn {
+      width: 2rem;
+      margin-top: -0.05rem;
+      margin-left: -0.5rem;
+    }
+  }
+  .sure {
+    position: relative;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    background: #ffc100;
+    color: white;
+    font-family: SourceHanSansCN-ExtraLight;
+    font-size: .8rem;
+    bottom: 0;
+  }
+}
+
+.border1 {
+  border-top: 1px solid #dcdcdc;
+}

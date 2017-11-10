@@ -1,0 +1,39 @@
+<div class="faq-html">
+    <div class="slide-nav1">
+        <div class="navTab1">
+            <div class="name js-name1" @click="faqClick($event,1050000,$index)">热点资讯专题<i class="iconfont">&#xe615;</i></div>
+            <div class="link-box1" style="border-bottom:1px solid #dcdcdc;" v-for="item1 in item1050000">
+                <div class="title">{{item1.subject}}</div>
+                <div class="title">{{item1.summary}}</div>
+            </div>
+        </div>
+        <div class="navTab1">
+            <div class="name js-name1" @click="faqClick($event,1060000,$index)">预约购买问题<i class="iconfont">&#xe615;</i></div>
+            <div class="link-box1" style="border-bottom:1px solid #dcdcdc;" v-for="item2 in item1060000">
+                <div class="title">{{item2.subject}}</div>
+                <div class="title">{{item2.summary}}</div>
+            </div>
+        </div>
+        <div class="navTab1">
+            <div class="name js-name1" @click="faqClick($event,1070000,$index)">订单物流问题<i class="iconfont">&#xe615;</i></div>
+            <div class="link-box1" style="border-bottom:1px solid #dcdcdc;" v-for="item3 in item1070000">
+                <div class="title">{{item3.subject}}</div>
+                <div class="title">{{item3.summary}}</div>
+            </div>
+        </div>
+        <div class="navTab1">
+            <div class="name js-name1" @click="faqClick($event,1080000,$index)">日常使用问题<i class="iconfont">&#xe615;</i></div>
+            <div class="link-box1" style="border-bottom:1px solid #dcdcdc;" v-for="item4 in item1080000">
+                <div class="title">{{item4.subject}}</div>
+                <div class="title">{{item4.summary}}</div>
+            </div>
+        </div>
+        <div class="navTab1">
+            <div class="name js-name1" @click="faqClick($event,1090000,$index)">售后常用问题<i class="iconfont">&#xe615;</i></div>
+            <div class="link-box1" style="border-bottom:1px solid #dcdcdc;" v-for="item5 in item1090000">
+                <div class="title">{{item5.subject}}</div>
+                <div class="title">{{item5.summary}}</div>
+            </div>
+        </div>
+    </div>
+</div>

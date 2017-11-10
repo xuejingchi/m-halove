@@ -1,0 +1,252 @@
+/**
+ * Created by halove-chowpun on 17/1/18.
+ */
+
+body {
+  background: #f7f7f7;
+}
+
+.st-content {
+  background: #f7f7f7;
+}
+
+.shop-car {
+  .icon {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid #d3d3d3;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 100%;
+    margin-right: 0.3rem;
+  }
+  .icon-check {
+    border: none;
+    background: url(https://image01.halove.com/website/halove_mobile_20170118/images/gou.png) no-repeat center;
+    background-size: cover;
+  }
+  .shopcar-title {
+    height: 2.3rem;
+    line-height: 2.3rem;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: inset 0px 1px 0px 0px white, inset 0px -1px 0px 0px #eaeaea;
+    font-size: 0.8rem;
+  }
+  .shopcar-title img {
+    width: 0.5rem;
+    left: 1rem;
+    top: 3.2rem;
+    position: absolute;
+    z-index: 2;
+  }
+  .shopcar-icon {
+    padding-left: 0.67rem;
+  }
+  .shopcar-icon i {
+    color: #d3d3d3;
+  }
+  .shopcar-iconSel i {
+    color: #ffc100;
+  }
+  .shopcar-edit {
+    float: right;
+    right: 1.1rem;
+    position: absolute;
+    font-size: 0.67rem;
+    color: #FFC100;
+  }
+  .list-box {
+    margin-top: -1px;
+    padding-bottom: 3.3rem;
+  }
+  .shopcar-store {
+    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+    background: white;
+    margin-bottom: 0.33rem;
+    overflow: hidden;
+    padding-bottom: 0.7rem;
+    padding-top: 0.7rem;
+    padding-right: .8rem;
+    display: flex;
+    flex-wrap: nowrap;
+    .shopcar-iconSel {
+      padding-left: 0.67rem;
+      line-height: 3.2rem;
+      float: left;
+      order:0;
+
+    }
+    .shopcar-thumb {
+      width: 3.37rem;
+      height: 3.37rem;
+      float: left;
+      margin-left: 0.6rem;
+      border: 1px solid #eaeaea;
+      border-radius: 5px;
+      padding: 0.3rem 0.45rem;
+      order:1;
+    }
+    .shopcar-thumb img {
+      vertical-align: baseline;
+      width: 2.45rem;
+      height: 2.73rem;
+    }
+    .shopcar-content {
+      float: left;
+      width: 11.5rem;
+      line-height: 0.72rem;
+      font-size: 0.67rem;
+      color: black;
+      padding: 0;
+      padding-left: 0.4rem;
+      order:2;
+      .title {
+        font-size: 0.67rem;
+        padding-top: 0.16rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: 0.57rem;
+      }
+      .des {
+       
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: .1rem;
+        line-height: 0.7rem;
+      }
+      .bottom-box {
+        border-top: 1px solid #eaeaea;
+        
+        margin-top: 0.67rem;
+        padding-top: 0.67rem;
+        clear: both;
+        overflow: hidden;
+        .price {
+          font-size: 0.67rem;
+          color: black;
+          float: right;
+          margin-right: 1.17rem;
+          font-family: "AvenirNext-Regular";
+          color: #ff0000;
+          margin-top: 0.15rem;
+        }
+        .amount {
+          overflow: hidden;
+          float: left;
+          span {
+            width: 1rem;
+            height: 1rem;
+            float: left;
+            border: 1px solid #d3d3d3;
+            line-height: 0.9rem;
+            text-align: center;
+          }
+          .minus {
+            border-right: none;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+          }
+          .plus {
+            border-left: none;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+          }
+          .amountNo {
+            -webkit-appearance:none;
+            border-radius: 0px;
+            width: 1.3rem;
+            height: 1rem;
+            line-height: 1rem;
+            text-align: center;
+            float: left;
+            border: 1px solid #d3d3d3;
+          }
+        }
+      }
+    }
+  }
+  .bottom {
+    height: 3rem;
+    background: #ffffff;
+    box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.05), inset 0px 1px 0px 0px #dcdcdc;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    padding: 0px 0.6rem;
+    overflow: hidden;
+    font-family: "SourceHanSansCN-Normal";
+    z-index: 10;
+    .check {
+      margin-top: 1.1rem;
+      float: left;
+      font-size: 0.67rem;
+      color: #4a4a4a;
+      text-align: center;
+    }
+    .do-box {
+      float: right;
+      border-radius: 0.2rem;
+      // width: 4rem;
+      padding: 0px 0.5rem;
+      height: 2.1rem;
+      margin-top: 0.42rem;
+      text-align: center;
+      color: #fff;
+      font-size: 0.8rem;
+      line-height: 2.1rem;
+    }
+    .totalPrice {
+      margin-top: 1rem;
+      float: left;
+      font-size: 0.67rem;
+      color: #4a4a4a;
+      text-align: right;
+      // width: 8rem;
+      // padding-right: 0.5rem;
+      padding-left: 0.6rem;
+      i {
+        font-size: 0.8rem;
+        font-style: normal;
+      }
+    }
+    .delete {
+      background: #ff3500;
+    }
+    .pay {
+      background-image: linear-gradient(-180deg, #ffc100 0%, #ffbb00 100%);
+    }
+  }
+  .isempty {
+    overflow: hidden;
+    img {
+      width: 4.2rem;
+      display: block;
+      margin: 0 auto;
+      margin-top: 2rem;
+    }
+    .des {
+      font-size: 0.67rem;
+      margin-top: 0.6rem;
+      margin-bottom: 1.6rem;
+      color: #9b9b9b;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+    .see {
+      background-image: linear-gradient(-180deg, #ffc100 0%, #ffbb00 100%);
+      border-radius: 0.2rem;
+      width: 6.7rem;
+      height: 2.2rem;
+      font-size: 0.8rem;
+      line-height: 2.2rem;
+      margin: 0 auto;
+      color: #ffffff;
+      text-align: center;
+    }
+  }
+}

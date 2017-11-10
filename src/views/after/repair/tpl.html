@@ -1,0 +1,46 @@
+<div class="repair-html">
+    <div class="slide-nav">
+        <div class="navTab" v-for="items in repairList.list">
+            <div class="name js-name" @click="jsClick($event)">{{items.pname}}维修网点<i class="iconfont">&#xe615;</i></div>
+            <div class="link-box">
+                <div class="title">{{items.pname}}维修网点</div>
+                <div class="title">{{items.name}}</div>
+                <div class="detail">地址：{{items.address}}
+                    电话：{{items.telephone}}
+                    服务时间：{{items.serviceTime}}</div>
+            </div>
+        </div>
+        <!--<div class="navTab">-->
+            <!--<div class="name js-name">广州维修网点<i class="iconfont">&#xe615;</i></div>-->
+            <!--<div class="link-box">-->
+                <!--&lt;!&ndash;<a>售后支持</a>&ndash;&gt;-->
+                <!--<div class="title">北京维修网点</div>-->
+                <!--<div class="title">九爱科技授权服务中心中邮时代北京店</div>-->
+                <!--<div class="detail">地址：北京市东城区朝阳门北大街21号-->
+                    <!--电话：010-59390149-->
+                    <!--服务时间：周一至周日9:15——18:00</div>-->
+                <!--<div class="title">北京维修网点</div>-->
+                <!--<div class="title">九爱科技授权服务中心中邮时代北京店</div>-->
+                <!--<div class="detail">地址：北京市东城区朝阳门北大街21号-->
+                    <!--电话：010-59390149-->
+                    <!--服务时间：周一至周日9:15——18:00</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="navTab">-->
+            <!--<div class="name js-name">深圳维修网点<i class="iconfont">&#xe615;</i></div>-->
+            <!--<div class="link-box">-->
+                <!--&lt;!&ndash;<a>售后支持</a>&ndash;&gt;-->
+                <!--<div class="title">北京维修网点</div>-->
+                <!--<div class="title">九爱科技授权服务中心中邮时代北京店</div>-->
+                <!--<div class="detail">地址：北京市东城区朝阳门北大街21号-->
+                    <!--电话：010-59390149-->
+                    <!--服务时间：周一至周日9:15——18:00</div>-->
+                <!--<div class="title">北京维修网点</div>-->
+                <!--<div class="title">九爱科技授权服务中心中邮时代北京店</div>-->
+                <!--<div class="detail">地址：北京市东城区朝阳门北大街21号-->
+                    <!--电话：010-59390149-->
+                    <!--服务时间：周一至周日9:15——18:00</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="personal-info-html">
+  <div style="text-align:center;">
+    <div class="title">
+      个人中心
+    </div>
+    <div class="user-info">
+      <img :src="info.picURL | userDefault"/>
+      <br/>
+      <span>
+      {{info.userNickname}}
+      </span>
+    </div>
+
+    <a  v-link="{name:'orderList',params:{}}" class="link-box">
+      <div class="my">
+        我的订单
+        <img src="https://image01.halove.com/website/halove_mobile_20170118/images/nextIcon.png" />
+      </div>
+    </a>
+  </div>
+  <div class="exit-box">
+    <div @click="logout()">退出登录</div>
+  </div>
+</div>

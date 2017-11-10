@@ -1,0 +1,51 @@
+<div class="payment-html">
+  <div class="base-info">
+   <div class="head">
+        <a @click="back()">
+            <img src="https://image01.halove.com/website/halove_mobile_20170118/images/backIcon.png" alt="">
+        </a>
+        选择支付方式
+       
+    </div>
+
+    <!-- <head-nav title="选择支付方式"></head-nav> -->
+    <div class="ap-titleFont line1">
+      订单编号：<span>{{info.orderNo}}</span>
+    </div>
+    <div class="ap-titleFont line2">
+      订单提交成功
+    </div>
+    <div class="ap-titleFont line3">
+      应付金额：<span class="price">￥<span>{{info.feeTotal | pricetoFixed}}</span></span>
+    </div>
+    <div class="ap-titleFont line4">
+      请在<span id="lastTime" class="lastTime"></span>内完成付款，超时后订单将会自动取消
+    </div>
+  </div>
+  <div class="pay-place-info">
+    <div class="ap-titleFont select">选择支付平台</div>
+    <div class="ap-titleFont zz">支付宝<i id="personType" class="iconfont"></i></div>
+  </div>
+  <div @click="payNow(info.orderNo)" class="pay-btn">
+    确认支付
+  </div>
+</div>
+<div style="display: none">
+  <form id="payForm" name="alipaysubmit" action="https://mapi.alipay.com/gateway.do" method="GET">
+    <input id="_input_charset" type="hidden" name="_input_charset" value="">
+    <input id="service" type="hidden" name="service" value="">
+    <input id="partner" type="hidden" name="partner" value="">
+    <input id="sign_type" type="hidden" name="sign_type" value="">
+    <input id="sign" type="hidden" name="sign" value="">
+    <input id="out_trade_no" type="hidden" name="out_trade_no" value="">
+    <input id="subject" type="hidden" name="subject" value="">
+    <input id="payment_type" type="hidden" name="payment_type" value="">
+    <input id="total_fee" type="hidden" name="total_fee" value="">
+    <input id="seller_id" type="hidden" name="seller_id" value="">
+    <input id="body" type="hidden" name="body" value="">
+    <input id="notify_url" type="hidden" name="notify_url" value="">
+    <input id="return_url" type="hidden" name="return_url" value="">
+    <input id="show_url" type="hidden" name="show_url" value="">
+    <input id="app_pay" type="hidden" name="app_pay" value="">
+  </form>
+</div>

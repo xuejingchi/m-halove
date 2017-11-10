@@ -1,0 +1,30 @@
+
+<div class="address-html">
+  <head-nav title="选择收货地址"></head-nav>
+
+  <a v-link="{name:'createAddress',params:{type: 0}}">
+    <div class="add">
+      <span>+&nbsp;</span>添加收货地址
+    </div>
+  </a>
+
+   <div class="address-list" v-for="l in info">
+    <div @click="selectAddress(l.id,$index)" class="inner">
+     <i class="iconfont" style="margin-left:10px;"></i>
+      <span class="name">{{l.ruserName}}</span>
+      <span class="phone">{{l.phone}}</span>
+      <div style="height:0.5rem;"></div>
+      <span class="default-address">
+          <span v-if="l.status==1" class="title">[默认地址]</span>
+          <span>{{l.province+l.city+l.district+l.address}}</span>
+      </span>
+    </div>
+
+    <div class="col-xs-12 btn-box">
+      <div @click="updateAddress(l.id,$index)" class="col-xs-6 do-btn">编辑</div>
+      <div @click="deleteAddress(l.id,$index)" class="col-xs-6 do-btn do-btn2">删除</div>
+    </div>
+    
+  </div>
+
+</div>

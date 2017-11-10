@@ -1,0 +1,14 @@
+<header v-show="isshowheader">
+	<!--<div id="st-trigger-effects" class="head_right">-->
+
+	<!--</div>-->
+	<button data-effect="st-effect-4" id="menu-bars" class="menu-bar" @click="showNav($event)"></button>
+	<a v-link="{name:'shopCar'}" class="car-link">
+  		<div class="num" v-if="itemNum">{{itemNum}}</div><i class="iconfont" style="font-size:1rem;color:#9b9b9b;">&#xe612;</i>
+	</a>
+	<a v-link="{name:'personalInfo',params:{}}" style="float: right;color:#9b9b9b;padding-right:1.67rem;"><i class="iconfont" style="font-size:1rem;color:#9b9b9b;">&#xe60b;</i></a>
+
+	<div class="top_logo">
+	<img src="https://image03.halove.com/website/halove_mobile_20170118/images/logo.png">
+	</div>
+</header>

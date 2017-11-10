@@ -1,0 +1,57 @@
+<div class="add-invoice-html">
+
+  <div class="main">
+
+    <head-nav title="发票信息"></head-nav>
+
+    <div class="type-info">
+      <div class="title">发票类型</div>
+      <div class="type-box">
+        <input type="button" class="specBtn {{mediaType==1?'active':''}}" id="type1" @click="changeMediaType(1)" value="纸质发票">
+        <input type="button" class="specBtn btn2 {{mediaType==2?'active':''}}" id="type2" @click="changeMediaType(2)" value="电子发票">
+      </div>
+    </div>
+
+
+    <div class="invoice-head-info">
+      <div class="title">发票抬头</div>
+      <div class="personal">
+        <i @click="changeType(1)" id="personType" class="iconfont" :class="{'active':type == 1}">
+       &#xe694;
+        </i>&nbsp;&nbsp;个人
+      </div>
+      <div class="company">
+        <i @click="changeType(2)" id="companyType" class="iconfont" :class="{'active':type == 2}">
+        &#xe766;
+        </i>&nbsp;&nbsp;企业
+      </div>
+    </div>
+
+
+    <div class="fill-info">
+      <div v-if="type==1" class="block">
+        <span>*&nbsp;</span>姓名：
+        <input v-model="name" type="text" placeholder="请填写姓名" />
+      </div>
+      <div v-if="type==2" class="block">
+        <span>*&nbsp;</span>抬头：
+        <input v-model="company" type="text" placeholder="请填写公司抬头" />
+      </div>
+      <div v-if="mediaType==2" class="block">
+        <span>*&nbsp;</span>邮箱：
+        <input v-model="email" type="text" placeholder="用来接收电子发票" />
+      </div>
+    </div>
+
+    <div class="invoice-content">
+      发票内容 <span><i class="iconfont">&#xe694;</i>&nbsp;&nbsp;明细</span>
+    </div>
+
+    <div class="attention">
+      注：建议开具电子发票，如选择纸质发票将在发货后5个工作日单独寄出，如有问题请联系400-618-9292。
+    </div>
+  </div>
+
+  <div @click="submitInvoice()" class="sure">确&nbsp;定</div>
+
+</div>
